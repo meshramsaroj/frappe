@@ -13,6 +13,5 @@ phases:
   build:
     commands:
       - echo Build started on `date`
-      - echo $SSH_PASS
-      - sshpass -p $SSH_PASS ssh $SSH_USER@$SERVER "cd $BENCH_DIR && bench update"
+      - sshpass -p $SSH_PASS ssh -o "StrictHostKeyChecking no" $SSH_USER@$SERVER "cd $BENCH_DIR && bench update"
       - echo Please Work!
