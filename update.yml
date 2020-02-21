@@ -1,6 +1,10 @@
 - hosts: localhost
   tasks:
-    - name: BENCH UPDATE KARLO
-      command: bench update --reset
+    - name: Update Staging Sites
+      command: bench update
       args:
         chdir: /home/frappe/frappe-bench
+    - name: Update Demo Sites
+      command: bench update
+      args:
+        chdir: /home/frappe/frappe-demo
