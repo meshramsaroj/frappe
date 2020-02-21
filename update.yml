@@ -1,6 +1,6 @@
 - hosts: localhost
   tasks:
     - name: BENCH UPDATE KARLO
-      command: bench update
+      command: bench update --reset
       args:
         chdir: /home/frappe/frappe-bench
