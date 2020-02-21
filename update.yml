@@ -1,10 +1,10 @@
 - hosts: localhost
   tasks:
     - name: Update Staging Sites
-      command: bench update
+      command: bench update --reset
       args:
         chdir: /home/frappe/frappe-bench
     - name: Update Demo Sites
-      command: bench update
+      command: bench update --reset
       args:
         chdir: /home/frappe/frappe-demo
