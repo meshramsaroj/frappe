@@ -13,4 +13,3 @@ phases:
   build:
     commands:
       - echo Build started on `date`
-      - aws ssm send-command --document-name "AWS-RunAnsiblePlaybook" --document-version "1" --targets '[{"Key":"tag:Client","Values":["Bloomstack"]}]' --parameters '{"playbook":[""],"playbookurl":["https://raw.githubusercontent.com/DigiThinkIT/frappe/aws-test/update.yml"],"extravars":["SSM=True"],"check":["False"]}' --timeout-seconds 600 --max-concurrency "50" --max-errors "0" --cloud-watch-output-config '{"CloudWatchOutputEnabled":true}' --region us-west-1
