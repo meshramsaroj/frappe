@@ -3,8 +3,8 @@
     - name: Update Staging Sites
       command: flock /tmp/bench.lock -c "bench update"
       args:
-        chdir: /home/frappe/frappe-bench
+        chdir: /home/frappe/frappe-staging
     - name: Update Demo Sites
       command: flock /tmp/bench.lock -c "bench update"
       args:
-        chdir: /home/frappe/frappe-demo
+        chdir: /home/frappe/frappe-production
