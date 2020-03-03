@@ -1,4 +1,9 @@
 - hosts: localhost
+
+  environment:
+    NVM_DIR: /home/frappe/.nvm
+    PATH: /home/frappe/.nvm/versions/node/v8.17.0/bin:{{ ansible_env.PATH }}
+
   tasks:
     - name: Update Staging Sites
       command: flock /tmp/bench.lock -c "bench update"
