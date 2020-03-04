@@ -13,5 +13,5 @@ phases:
   build:
     commands:
       - echo Build started on `date`
-      - aws ssm send-command --document-name "AWS-RunAnsiblePlaybook" --document-version "\$LATEST" --targets '[{"Key":"tag:bloomstack","Values":["testing"]}]' --parameters '{"playbook":[""],"playbookurl":["https://raw.githubusercontent.com/DigiThinkIT/frappe/aws-test/update.yml"],"extravars":["SSM=True"],"check":["False"]}' --timeout-seconds 600 --max-concurrency "50" --max-errors "0" --cloud-watch-output-config '{"CloudWatchOutputEnabled":true,"CloudWatchLogGroupName":"update-test"}' --region ap-south-1
+      - aws ssm send-command --document-name "AWS-ApplyAnsiblePlaybooks" --document-version "\$LATEST" --targets '[{"Key":"tag:bloomstack","Values":["testing"]}]' --parameters '{"SourceType":["S3"],"SourceInfo":["{\"path\":\"https://bloomstack-ssm-test.s3.ap-south-1.amazonaws.com/update.yaml\"}\n"],"InstallDependencies":["False"],"PlaybookFile":["update.yaml"],"ExtraVariables":["SSM=True"],"Check":["False"],"Verbose":["-v"]}' --timeout-seconds 600 --max-concurrency "50" --max-errors "0" --output-s3-bucket-name "bloomstack-ssm-test" --region ap-south-1
       - echo Build completed on `date`
