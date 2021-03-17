@@ -14,8 +14,6 @@
   "email_id",
   "user",
   "address",
-  "country",
-  "country_code",
   "sync_with_google_contacts",
   "cb00",
   "status",
@@ -39,7 +37,8 @@
   "links",
   "more_info",
   "department",
-  "unsubscribed"
+  "unsubscribed",
+  "title"
  ],
  "fields": [
   {
@@ -244,24 +243,16 @@
    "label": "Company Name"
   },
   {
-   "fetch_from": "address.country",
-   "fieldname": "country",
-   "fieldtype": "Link",
-   "label": "Country",
-   "options": "Country"
-  },
-  {
-   "fetch_from": "country.code",
-   "fieldname": "country_code",
+   "fieldname": "title",
    "fieldtype": "Data",
    "hidden": 1,
-   "label": "Country Code"
+   "label": "title"
   }
  ],
  "icon": "fa fa-user",
  "idx": 1,
  "image_field": "image",
- "modified": "2021-02-23 06:40:54.152210",
+ "modified": "2021-03-17 16:42:48.038012",
  "modified_by": "Administrator",
  "module": "Contacts",
  "name": "Contact",
@@ -392,5 +383,6 @@
   }
  ],
  "sort_field": "modified",
- "sort_order": "ASC"
+ "sort_order": "ASC",
+ "title_field": "title"
 }
